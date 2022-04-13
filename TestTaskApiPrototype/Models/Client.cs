@@ -56,7 +56,7 @@ public class Client
 
     public Client Spouse { get; set; }
 
-    public List<Child> Children { get; set; } //TODO: use IEnumerable<Child>, or ICollection
+    public ICollection<Child> Children { get; set; } //TODO: use IEnumerable<Child>, or ICollection
 
     public DocumentPassport Passport { get; set; }
 
@@ -64,7 +64,7 @@ public class Client
 
     public Address RegAddress { get; set; }
 
-    public List<Job> Jobs { get; set; }
+    public ICollection<Job> Jobs { get; set; }
 
     public int GeneralExp { get; set; } //int?
 
@@ -84,13 +84,26 @@ public class Client
 
     public double MonExpense { get; set; }
 
-    public List<Guid> Files { get; set; }
+    public ICollection<File> Files { get; set; }
 
-    public List<Guid> Documents { get; set; }
+    public ICollection<Document> Documents { get; set; }
 
-    public List<ClientCommunications> Communications { get; set; }
+    public ICollection<ClientCommunications> Communications { get; set; }
 
     public DateTime CreatedAt { get; set; }
 
     public DateTime UpdatedAt { get; set; }
+}
+
+//ВЫНЕСТИ В ОТДЕЛЬНЫЕ ФАЙЛЫ!!
+public class File
+{
+    public int Id { get; set; }
+    public Guid FileGuid;
+}
+
+public class Document //TODO: РАЗОБРАТЬСЯ СО СХЕМОЙ НАИМЕНОВАНИЯ!!!!!
+{
+    public int Id { get; set; }
+    public Guid DocumentGuid;
 }

@@ -8,7 +8,11 @@ public enum ClientCommunicationsType
 
 public class ClientCommunications
 {
+    public int Id { get; set; }
+
     public ClientCommunicationsType Type { get; set; }
 
     public string? Value { get; set; }
+
+    public Client Client { get; set; }
 }
