@@ -31,7 +31,7 @@ public class ClientsController : ControllerBase
         _context.Clients.Add(client);
         await _context.SaveChangesAsync();
 
-        return Accepted();
+        return Ok(client);
     }
 
 }
